@@ -1,0 +1,284 @@
+/*PC用*/
+
+  .container {
+    display: grid;
+    grid-template-columns: 100%;
+    width: 960px;
+    margin: 0 auto;
+    padding: 0 4%;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+
+  }
+
+  .header h1{
+    font-size: 20px;
+    background-color: #384152;
+    color: #fff;
+    font-family: "Hiragino Kaku Gothic ProN";
+    font-weight: 600;
+    padding: 8px 15px;
+    white-space: nowrap;
+  }
+
+  .header ul {
+    display: flex;
+    width: auto;
+    white-space: nowrap;
+  }
+
+  header ul li {
+    display: flex;
+    font-size: 14px;
+    margin-top: 12px;
+    padding-left: 30px;
+  }
+
+  .main_visual img {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    max-width: none;
+    height: 600px;
+    display: block;
+    margin-bottom: 100px;
+    object-fit: cover
+  }
+
+
+
+  .introduce h2 {
+    font-family: "Hiragino Kaku Gothic ProN";
+    font-size: 1.8em;
+    display: table;
+    margin: auto;
+    border-bottom: 1px solid #000;
+    font-weight: 600;
+    margin-bottom: 40px;
+  }
+
+  .introduce_section  {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+
+  .introduce .title  {
+    font-family: 'Courier New', Courier, monospace;
+    margin-bottom: 15px;
+  }
+
+  .introduce .text  {
+    font-size: 1em;
+    text-align: initial;
+
+  }
+
+  .introduce_photo {
+    grid-column: 2;
+    grid-row: 1 / 3;
+    text-align: right;
+  }
+
+  .introduce_photo img {
+    width: 60%;
+    border-radius: 100%;
+  }
+
+  .profile  {
+    margin: 100px 0  40px 0;
+  }
+
+  .profile h2 {
+    display: table;
+    margin: auto;
+    font-size: 1.8em;
+    border-bottom: 1px solid #000;
+    font-family: "Hiragino Kaku Gothic ProN";
+    font-weight: 600;
+  }
+
+  .profile_photo_section  {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: auto;
+    gap: 20px;
+  }
+
+  .profile_photo  {
+    text-align: center;
+  }
+
+  .profile_photo h3 {
+    font-family: 'Courier New', Courier, monospace;
+    padding:  20px 0 15px 0;
+
+  }
+
+  .profile_photo p {
+    font-size: 0.9em;
+    padding-bottom: 10px;
+  }
+
+  .profile_photo img {
+    width: 100%;
+  }
+
+  footer {
+    margin-top: 100px;
+    text-align: center;
+    font-size: 10px;
+  }
+
+/*スマホ用*/
+@media screen and (max-width:600px) {
+  .container  {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    padding: 0 4%;
+    max-width: fit-content;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    width: auto;
+  }
+
+  .header h1{
+    font-size: 20px;
+    background-color: #384152;
+    color: #fff;
+    font-family: "Hiragino Kaku Gothic ProN";
+    font-weight: 600;
+    padding: 8px 15px;
+    margin-left: 10px;
+    white-space: nowrap;
+  }
+
+  .header ul {
+    display: flex;
+    width: auto;
+    white-space: nowrap;
+
+  }
+
+  header ul li {
+    display: flex;
+    font-size: 14px;
+    margin-top: 12px;
+    padding-left: 20px;
+  }
+
+  .main_visual  {
+    display: grid;
+    grid-column: auto;
+    grid-row: 2;
+
+  }
+
+  .main_visual img {
+    margin-left: calc(-vw + 0%);
+    max-width: none;
+    height: 600px;
+    display: block;
+    margin-bottom: 100px;
+  }
+
+  article {
+    text-align: center;
+  }
+
+  .introduce h2 {
+    font-family: "Hiragino Kaku Gothic ProN";
+    font-size: 30px;
+    margin-bottom: 50px;
+    border-bottom: 1px solid #000;
+    display: inline-block;
+    font-weight: 600;
+  }
+
+  .introduce_section  {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 3fr;
+  }
+
+  .introduce .title  {
+    grid-column: 1;
+    grid-row: 1;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+
+  .introduce .text  {
+    grid-row: 2;
+    text-align: left;
+  }
+
+  .introduce_photo  {
+    grid-column: 1;
+    grid-row: 3;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+
+  .introduce_photo img {
+    width: 30%;
+    border-radius: 50%;
+  }
+
+  .profile h2 {
+    font-size: 26px;
+    margin-bottom: 50px;
+    text-align: center;
+    border-bottom: 1px solid #000;
+    display: inline-block;
+    font-family: "Hiragino Kaku Gothic ProN";
+    font-weight: 600;
+  }
+
+  .profile_photo_section  {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    width: auto;
+    gap: 20px;
+  }
+
+  .profile_photo  {
+    text-align: center;
+  }
+
+  .profile_photo h3 {
+    font-family: 'Courier New', Courier, monospace;
+    padding:  20px 0 15px 0;
+
+  }
+
+  .profile_photo p {
+    font-size: 0.9em;
+    padding-bottom: 10px;
+  }
+
+  .profile_photo img {
+    width: 100%;
+  }
+
+  footer {
+    text-align: center;
+    font-size: 10px;
+  }
+
+}
