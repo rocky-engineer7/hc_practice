@@ -19,15 +19,11 @@ members = ["A", "B", "C", "D", "E", "F"]
 # membersをシャッフルする
 shuffled_members = members.shuffle
 
-# randメソッドを使用し、0か1をランダムに決定する
-choice = rand(2)
+# sampleメソッドを使用し、1か2をランダムに決定する
+choice = (1..2).sample
 
-# 0なら3-3,1なら2-4でグループ分けをする
-if choice == 0
-  result = [shuffled_members[0..2].sort, shuffled_members[3..5].sort].to_a
-else
-  result = [shuffled_members[0..1].sort, shuffled_members[2..5].sort].to_a
-end
+# グループ分けをする
+result = [shuffled_members[0..choice].sort, shuffled_members[(choice + 1)..5].sort].to_a
 
 # 結果を出力
 result.each {|group| p group}
