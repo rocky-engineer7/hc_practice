@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # テストケース1
 
 # 入力
@@ -17,14 +19,21 @@
 
 # ボギー,イーグル,ホールインワン,アルバトロス,ホールインワン,バーディ,バーディ,バーディ,3ボギー,パー,パー,バーディ,ホールインワン,3ボギー,4ボギー,バーディ,イーグル,イーグル
 
-
-
 # 規定打数(X)とプレイヤーの打数(Y)の入力を受け取り .mapで整数に変換する
 X = gets.chomp.split(",").map(&:to_i)
 Y = gets.chomp.split(",").map(&:to_i)
 
 # プレイヤー打数(Y) - 規定打数(X)
 scores = Y.each_with_index.map { |y, i| y - X[i] }
+
+# 通常スコアを判断する
+SCORE_MAPPING = {
+  -3 => "アルバトロス",
+  -2 => "イーグル",
+  -1 => "バーディ",
+  0 => "パー",
+  1 => "ボギー",
+}.freeze
 
 # スコアをresultsに格納する
 results = scores.each_with_index.map do |score, index|
@@ -34,25 +43,7 @@ results = scores.each_with_index.map do |score, index|
   elsif X[index] == 5 && score == -4
     "コンドル"
   else
-    # 通常スコアを判断する
-    case score
-    when -3
-      "アルバトロス"
-    when -2
-      "イーグル"
-    when -1
-      "バーディ"
-    when 0
-      "パー"
-    when 1
-      "ボギー"
-    when 2
-      "#{score}ボギー"
-    when 3
-      "#{score}ボギー"
-    else
-      "#{score.abs}ボギー"
-    end
+    SCORE_MAPPING[score] || "#{score.abs}ボギー"
   end
 end
 
