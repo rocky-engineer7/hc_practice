@@ -151,5 +151,4 @@ Gemspec/DeprecatedAttributeAssignment:
 
 Style/YAMLFileRead:
   Enabled: true
-
-NewCops: enable
+# NewCops: enable

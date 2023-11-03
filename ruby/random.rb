@@ -12,9 +12,8 @@
 
 # また表示結果はアルファベット順にしてください。
 
-
 # 6人を配列で定義する
-members = ["A", "B", "C", "D", "E", "F"]
+members = %w[A B C D E F]
 
 # membersをシャッフルする
 shuffled_members = members.shuffle
@@ -26,4 +25,4 @@ choice = (1..2).sample
 result = [shuffled_members[0..choice].sort, shuffled_members[(choice + 1)..5].sort].to_a
 
 # 結果を出力
-result.each {|group| p group}
+result.each { |group| p group }
