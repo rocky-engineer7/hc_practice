@@ -2,6 +2,8 @@
 
 # main.rb
 require_relative "vending_machine"
+require_relative "suica"
+require_relative "juice"
 
 # Suicaインスタンスを生成する
 suica_card = Suica.new

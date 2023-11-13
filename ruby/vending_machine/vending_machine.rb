@@ -1,45 +1,5 @@
 # frozen_string_literal: true
 
-# Suicaクラス
-class Suica
-  # 100円未満のチャージを禁止する例外
-  class DepositException < StandardError; end
-
-  # @balanceの読み取り専用アクセスを提供する
-  attr_reader :balance
-
-  # 預かり金500円を引数で受け取り、＠balanceに代入する
-  def initialize(balance = 500)
-    @balance = balance
-  end
-
-  # チャージ処理
-  def charge(amount)
-    # もしチャージする金額が100円未満なら例外を発生させる
-    raise DepositException, "100円未満のチャージはできません。" if amount < 100
-
-    # 現在の残高とamountを加算してから、@balanceに代入する
-    @balance += amount
-  end
-end
-
-# ジュースの種類
-
-# 初期状態でペプシ５本格納
-# 在庫数を取得
-
-# Juiceクラス
-class Juice
-  # name,priceの読み取り専用アクセスを提供する
-  attr_reader :name, :price
-
-  # ジュースの情報
-  def initialize(name, price)
-    @name = name
-    @price = price
-  end
-end
-
 # VendingMachineクラスの定義
 class VendingMachine
   # 在庫情報への読み取り専用アクセスを提供する
@@ -57,3 +17,14 @@ class VendingMachine
     @stock.map { |juice, count| "#{juice.name} - 価格: #{juice.price}円, 在庫: #{count}本" }
   end
 end
+
+# 自動販売機はペプシが購入できるかどうかを取得できる。
+
+# ジュース値段以上のチャージ残高がある条件下で購入操作を行うと以下の動作をする
+
+# 自動販売機はジュースの在庫を減らす
+# 売り上げ金額を増やす
+# Suicaのチャージ残高を減らす
+# チャージ残高が足りない場合もしくは在庫がない場合、購入操作を行った場合は例外を発生させる
+
+# 自動販売機は現在の売上金額を取得できる
